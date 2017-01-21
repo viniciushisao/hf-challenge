@@ -1,4 +1,4 @@
-package br.com.hisao.hf.Util;
+package br.com.hisao.hf.util;
 
 import org.json.JSONArray;
 import org.json.JSONException;

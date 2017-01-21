@@ -1,48 +1,38 @@
 package br.com.hisao.hf;
 
-import android.os.AsyncTask;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
+import java.util.List;
 
-import br.com.hisao.hf.Model.Recipe;
-import br.com.hisao.hf.Util.JsonUtil;
+import br.com.hisao.hf.util.Log;
+import br.com.hisao.hf.models.Receipe;
+import br.com.hisao.hf.modelsweb.HelloFrashWebApi;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
+
+    public static final String BASE_URL = "http://api.myservice.com/";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        gets();
 
-
-    }
-
-    private void gets() {
-        AsyncTask<Void, Void, JSONArray> taskGetJson = new AsyncTask<Void, Void, JSONArray>() {
+        Call<List<Receipe>> listCall = HelloFrashWebApi.getHelloFreshApiInterface().getReceipes();
+        listCall.enqueue(new Callback<List<Receipe>>() {
             @Override
-            protected JSONArray doInBackground(Void... params) {
-                return JsonUtil.getJson("https://raw.githubusercontent.com/hellofreshdevtests/viniciushisao-android-test/master/recipes.json?token=AJrTg9JL2K2RfeBJHoOKpLT5Wc4E_ZOTks5Yi-gRwA%3D%3D");
-            }
-
-            @Override
-            protected void onPostExecute(JSONArray jsonArray) {
-                super.onPostExecute(jsonArray);
-                try {
-                    for (int i = 0; i < jsonArray.length(); i++) {
-                        JSONObject explrObject;
-                        explrObject = jsonArray.getJSONObject(i);
-                        new Recipe(explrObject);
-                    }
-                } catch (JSONException e) {
-                    e.printStackTrace();
+            public void onResponse(Call<List<Receipe>> call, Response<List<Receipe>> response) {
+                for (Receipe receipe : response.body()) {
+                    Log.d("MainActivity:onResponse:51 " + receipe.getName());
                 }
             }
-        };
-        taskGetJson.execute(null, null, null);
-    }
 
+            @Override
+            public void onFailure(Call<List<Receipe>> call, Throwable t) {
+                Log.d("MainActivity:onFailure:54 " + t.getMessage());
+            }
+        });
+    }
 }

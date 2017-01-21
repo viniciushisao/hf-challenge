@@ -1,4 +1,4 @@
-package br.com.hisao.hf.Util;
+package br.com.hisao.hf.util;
 
 import java.util.ArrayList;
 
