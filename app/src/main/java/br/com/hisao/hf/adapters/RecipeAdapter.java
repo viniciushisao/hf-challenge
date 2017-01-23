@@ -5,7 +5,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.squareup.picasso.Picasso;
+
+import org.w3c.dom.Text;
 
 import java.util.List;
 
@@ -55,8 +60,18 @@ public class RecipeAdapter extends BaseAdapter {
             LayoutInflater inflater = (activity).getLayoutInflater();
             view = inflater.inflate(R.layout.receipt_adapter_item, viewGroup, false);
         }
+
         TextView name = (TextView) view.findViewById(R.id.name);
-        name.setText(recipe.getName());
+        ImageView imageThumb = (ImageView) view.findViewById(R.id.thumb);
+        TextView favorites = (TextView) view.findViewById(R.id.favorites);
+        TextView rating = (TextView) view.findViewById(R.id.rating);
+
+        //I am not sure what kind of image (size or format) I am supposed to get here.
+        if (imageThumb != null)
+            Picasso.with(activity).load(recipe.getThumb()).into(imageThumb);
+        name.setText((recipe.getName() != null) ? recipe.getName() : "Not available");
+        favorites.setText((recipe.getFavorites() != null) ? recipe.getFavorites().toString() : "Not available");
+        rating.setText((recipe.getRating() != null) ? recipe.getRating().toString() : "Not available");
 
         view.setOnClickListener(new View.OnClickListener() {
             @Override

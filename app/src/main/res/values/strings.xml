@@ -6,4 +6,7 @@
     <string name="login">Login</string>
     <string name="enter_your_password">Enter your password</string>
     <string name="enter_your_e_mail">Enter your e-mail</string>
+    <string name="favorites">Favorites</string>
+    <string name="ratings">Ratings</string>
+    <string name="rating">Rating</string>
 </resources>
