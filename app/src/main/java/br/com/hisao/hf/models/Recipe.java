@@ -1,10 +1,13 @@
 package br.com.hisao.hf.models;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class Receipe {
+public class Recipe implements Parcelable {
 
     private String calories;
     private String carbos;
@@ -34,6 +37,40 @@ public class Receipe {
     private User user;
     private List<String> weeks = null;
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
+
+    protected Recipe(Parcel in) {
+        calories = in.readString();
+        carbos = in.readString();
+        card = in.readString();
+        country = in.readString();
+        deliverableIngredients = in.createStringArrayList();
+        description = in.readString();
+        fats = in.readString();
+        fibers = in.readString();
+        headline = in.readString();
+        id = in.readString();
+        image = in.readString();
+        ingredients = in.createStringArrayList();
+        keywords = in.createStringArrayList();
+        name = in.readString();
+        products = in.createStringArrayList();
+        proteins = in.readString();
+        thumb = in.readString();
+        time = in.readString();
+        weeks = in.createStringArrayList();
+    }
+
+    public static final Creator<Recipe> CREATOR = new Creator<Recipe>() {
+        @Override
+        public Recipe createFromParcel(Parcel in) {
+            return new Recipe(in);
+        }
+
+        @Override
+        public Recipe[] newArray(int size) {
+            return new Recipe[size];
+        }
+    };
 
     public String getCalories() {
         return calories;
@@ -259,4 +296,31 @@ public class Receipe {
         this.additionalProperties.put(name, value);
     }
 
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeString(calories);
+        parcel.writeString(carbos);
+        parcel.writeString(card);
+        parcel.writeString(country);
+        parcel.writeStringList(deliverableIngredients);
+        parcel.writeString(description);
+        parcel.writeString(fats);
+        parcel.writeString(fibers);
+        parcel.writeString(headline);
+        parcel.writeString(id);
+        parcel.writeString(image);
+        parcel.writeStringList(ingredients);
+        parcel.writeStringList(keywords);
+        parcel.writeString(name);
+        parcel.writeStringList(products);
+        parcel.writeString(proteins);
+        parcel.writeString(thumb);
+        parcel.writeString(time);
+        parcel.writeStringList(weeks);
+    }
 }
