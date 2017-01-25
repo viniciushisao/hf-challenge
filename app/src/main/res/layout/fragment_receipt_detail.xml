@@ -2,20 +2,128 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:clickable="true"
+    android:id="@+id/frg_recipt_detail"
+    android:background="#FFFFFF"
     tools:context="br.com.hisao.hf.fragments.RecipeDetailFragment">
 
 
     <LinearLayout
-        android:clickable="true"
-        android:background="#FFFFFF"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/default_margin"
+        android:clickable="true"
+        android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/tv_calories"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/name"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/default_margin"
+                android:text="Crispy Fish Goujons" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="@dimen/default_margin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/description"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/default_margin"
+                android:text="Crispy Fish Goujons" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/ingredients"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/ingredients"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/arrow" />
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/hello_blank_fragment" />
+            android:layout_marginRight="@dimen/default_margin"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/star1"
+                android:layout_width="@dimen/image_dimension"
+                android:layout_height="@dimen/image_dimension"
+                android:src="@drawable/star" />
+
+            <ImageView
+                android:id="@+id/star2"
+                android:layout_width="@dimen/image_dimension"
+                android:layout_height="@dimen/image_dimension"
+                android:src="@drawable/star" />
+
+            <ImageView
+                android:id="@+id/star3"
+                android:layout_width="@dimen/image_dimension"
+                android:layout_height="@dimen/image_dimension"
+                android:src="@drawable/star" />
+
+            <ImageView
+                android:id="@+id/star4"
+                android:layout_width="@dimen/image_dimension"
+                android:layout_height="@dimen/image_dimension"
+                android:src="@drawable/star" />
+
+            <ImageView
+                android:id="@+id/star5"
+                android:layout_width="@dimen/image_dimension"
+                android:layout_height="@dimen/image_dimension"
+                android:src="@drawable/star" />
+
+            <View
+                android:layout_weight="1"
+                android:layout_width="0dip"
+                android:layout_height="0dip"/>
+
+            <ImageView
+                android:id="@+id/like"
+                android:layout_width="@dimen/image_dimension"
+                android:layout_height="@dimen/image_dimension"
+                android:src="@drawable/favorite" />
+
+        </LinearLayout>
+
 
     </LinearLayout>
 

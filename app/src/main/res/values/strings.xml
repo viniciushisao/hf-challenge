@@ -9,4 +9,7 @@
     <string name="favorites">Favorites</string>
     <string name="ratings">Ratings</string>
     <string name="rating">Rating</string>
+    <string name="name">Name</string>
+    <string name="description">Description</string>
+    <string name="ingredients">Ingredients</string>
 </resources>
