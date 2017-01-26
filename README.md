@@ -11,6 +11,7 @@
 1. Test are written in Espresso. You can find then in test folder.
 1. The project build is gradle.
 1. I did not make too many tests on UI. It means if some data comes very different then the sample it may crash the UI.
+1. I took a look into the actual application and what I tried is to make something different in terms of UI
 
 ## Personal
 
