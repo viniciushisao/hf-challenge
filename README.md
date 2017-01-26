@@ -8,9 +8,13 @@
 1. Mainly I used to libraries to make the code:
   1. Picaso to render images. I know it could be used another way since its just one image and it is not working, but I believe if it is going to be real implemented, I will use it more.
   1. Retrofit to handle server calls. Usually in my projects, when needed, I used to make all the calls manually, which is not painfull but ir requires more work. Also, retrofit comes with gson, which is nice, tho.
+1. Test are written in Espresso. You can find then in test folder.
+1. The project build is gradle.
+1. I did not make too many tests on UI. It means if some data comes very different then the sample it may crash the UI.
+1. I took a look into the actual application and what I tried is to make something different in terms of UI
 
 ## Personal
 
-1. I took almost 10 days in total. Coding time about 12 hours.
+1. I took almost 7 days in total. Coding time about 10 hours.
 1. I am terrible in UI stuff. I did not use fancy material design classes to implement my UI, just did really basic.
 
