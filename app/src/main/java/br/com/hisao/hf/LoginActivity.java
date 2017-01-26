@@ -1,12 +1,11 @@
 package br.com.hisao.hf;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EdgeEffect;
 import android.widget.EditText;
-import android.widget.Toast;
+import android.widget.TextView;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -21,16 +20,21 @@ public class LoginActivity extends AppCompatActivity {
         Button login = (Button) findViewById(R.id.login);
         final EditText password = (EditText) findViewById(R.id.password);
         final EditText email = (EditText) findViewById(R.id.email);
+        final TextView result = (TextView) findViewById(R.id.result);
+        result.setVisibility(View.GONE);
 
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
                 if (!isValidEmail(email.getText().toString().trim())) {
-                    Toast.makeText(LoginActivity.this, "Email not valid", Toast.LENGTH_SHORT).show();
+                    result.setVisibility(View.VISIBLE);
+                    result.setText(R.string.email_not_valid);
                 } else if (!isValidPassword(password.getText().toString().trim())) {
-                    Toast.makeText(LoginActivity.this, "Password not valid", Toast.LENGTH_SHORT).show();
+                    result.setVisibility(View.VISIBLE);
+                    result.setText(R.string.password_not_valid);
                 } else {
+                    result.setVisibility(View.GONE);
                     //TODO implement login
                 }
             }

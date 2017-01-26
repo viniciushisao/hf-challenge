@@ -13,4 +13,6 @@
     <string name="description">Description</string>
     <string name="ingredients">Ingredients</string>
     <string name="not_available">Not available</string>
+    <string name="email_not_valid">Email not valid</string>
+    <string name="password_not_valid">Password not valid</string>
 </resources>

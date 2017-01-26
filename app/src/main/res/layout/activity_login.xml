@@ -3,29 +3,36 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_login"
     android:layout_width="wrap_content"
-    android:layout_marginTop="50dp"
-    android:layout_gravity="center_horizontal"
     android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal"
+    android:layout_marginTop="50dp"
     android:orientation="vertical"
     tools:context="br.com.hisao.hf.LoginActivity">
 
     <EditText
         android:id="@+id/email"
-        android:hint="@string/enter_your_e_mail"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:hint="@string/enter_your_e_mail" />
 
     <EditText
-        android:hint="@string/enter_your_password"
         android:id="@+id/password"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:inputType="textPassword"
+        android:layout_height="wrap_content"
+        android:hint="@string/enter_your_password" />
 
     <Button
         android:id="@+id/login"
-        android:text="@string/login"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:text="@string/login" />
+
+    <TextView
+        android:id="@+id/result"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginTop="30dp" />
 
 
 </LinearLayout>
