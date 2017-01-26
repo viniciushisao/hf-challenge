@@ -3,31 +3,35 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#FFFFFF"
     android:orientation="horizontal"
-    android:padding="5dp"
+    android:padding="@dimen/default_margin"
     tools:context="br.com.hisao.hf.MainActivity">
 
     <ImageView
         android:id="@+id/thumb"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        android:background="@drawable/image_not_found"
         android:layout_gravity="center"
-        android:background="@android:color/holo_green_dark" />
+        android:scaleType="fitXY"
+        android:layout_weight="1" />
 
     <LinearLayout
-        android:layout_width="0dp"
+        android:layout_width="0px"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/default_margin"
-        android:layout_weight="1"
+        android:layout_gravity="center"
+        android:layout_marginLeft="@dimen/default_margin"
+        android:layout_weight="3"
         android:orientation="vertical">
 
         <TextView
             android:id="@+id/name"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_marginBottom="@dimen/default_margin"
-            android:text="Hello World!" />
+            android:layout_height="wrap_content"
+            android:text="Hello World!"
+            android:textStyle="bold" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -67,8 +71,7 @@
 
     <TextView
         android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:layout_marginLeft="10dp"
-        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:text="Click for details" />
 </LinearLayout>

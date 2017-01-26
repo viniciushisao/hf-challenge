@@ -1,6 +1,7 @@
 package br.com.hisao.hf.adapters;
 
 import android.app.Activity;
+import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -67,11 +68,11 @@ public class RecipeAdapter extends BaseAdapter {
         TextView rating = (TextView) view.findViewById(R.id.rating);
 
         //I am not sure what kind of image (size or format) I am supposed to get here.
-        if (imageThumb != null)
-            Picasso.with(activity).load(recipe.getThumb()).into(imageThumb);
-        name.setText((recipe.getName() != null) ? recipe.getName() : "Not available");
-        favorites.setText((recipe.getFavorites() != null) ? recipe.getFavorites().toString() : "Not available");
-        rating.setText((recipe.getRating() != null) ? recipe.getRating().toString() : "Not available");
+
+        Picasso.with(activity).load(recipe.getThumb()).error(ContextCompat.getDrawable(activity, R.drawable.image_not_found)).into(imageThumb);
+        name.setText((recipe.getName() != null) ? recipe.getName() : activity.getString(R.string.not_available));
+        favorites.setText((recipe.getFavorites() != null) ? recipe.getFavorites().toString() : activity.getString(R.string.not_available));
+        rating.setText((recipe.getRating() != null) ? recipe.getRating().toString() : activity.getString(R.string.not_available));
 
         view.setOnClickListener(new View.OnClickListener() {
             @Override
