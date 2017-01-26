@@ -16,11 +16,13 @@
         android:orientation="vertical">
 
         <LinearLayout
+            android:layout_marginTop="@dimen/default_margin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
             <TextView
+                android:layout_marginLeft="@dimen/default_margin"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/name"
@@ -34,6 +36,13 @@
                 android:text="Crispy Fish Goujons" />
         </LinearLayout>
 
+
+        <View
+            android:layout_margin="@dimen/default_margin"
+            android:background="#E6E6E6"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"/>
+
         <LinearLayout
             android:layout_marginTop="@dimen/default_margin"
             android:layout_width="match_parent"
@@ -41,6 +50,7 @@
             android:orientation="horizontal">
 
             <TextView
+                android:layout_marginLeft="@dimen/default_margin"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/description"
@@ -54,10 +64,17 @@
                 android:text="Crispy Fish Goujons" />
         </LinearLayout>
 
+        <View
+            android:layout_margin="@dimen/default_margin"
+            android:background="#E6E6E6"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"/>
+
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="@dimen/default_margin"
             android:gravity="center"
             android:orientation="horizontal">
 
@@ -70,10 +87,17 @@
 
             <ImageView
                 android:id="@+id/ingredients"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:src="@drawable/arrow" />
         </LinearLayout>
+
+
+        <View
+            android:layout_margin="@dimen/default_margin"
+            android:background="#E6E6E6"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"/>
 
         <LinearLayout
             android:layout_width="wrap_content"

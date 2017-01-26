@@ -1,6 +1,7 @@
 package br.com.hisao.hf;
 
 
+import android.os.SystemClock;
 import android.support.test.espresso.ViewInteraction;
 import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
@@ -39,8 +40,8 @@ public class LoginActivityTest {
     public void loginActivityTest() {
         ViewInteraction appCompatTextView = onView(
                 allOf(withId(R.id.login_action), withText("Login"), isDisplayed()));
+        SystemClock.sleep(1500);
         appCompatTextView.perform(click());
-
         ViewInteraction appCompatEditText = onView(
                 allOf(withId(R.id.email),
                         withParent(allOf(withId(R.id.activity_login),
